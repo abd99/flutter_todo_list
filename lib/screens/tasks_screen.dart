@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todo_list/widgets/tasks_list.dart';
 
 class TasksScreen extends StatelessWidget {
   @override
@@ -50,13 +51,15 @@ class TasksScreen extends StatelessWidget {
           ),
           Expanded(
             child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20.0),
-                  topRight: Radius.circular(20.0),
+                  topLeft: Radius.circular(32.0),
+                  topRight: Radius.circular(32.0),
                 ),
               ),
+              child: TasksList(),
             ),
           ),
         ],
