@@ -8,7 +8,7 @@ class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: Colors.lightBlueAccent[700],
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -23,8 +23,8 @@ class TasksScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 CircleAvatar(
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.lightBlueAccent,
+                  backgroundColor: Theme.of(context).canvasColor,
+                  foregroundColor: Colors.lightBlueAccent[700],
                   radius: 30.0,
                   child: Icon(
                     Icons.list,
@@ -38,14 +38,12 @@ class TasksScreen extends StatelessWidget {
                   'Todoey',
                   style: TextStyle(
                     fontSize: 50.0,
-                    color: Colors.white,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
                 Text(
                   '${Provider.of<TaskData>(context).taskCount} Tasks',
                   style: TextStyle(
-                    color: Colors.white,
                     fontSize: 18.0,
                   ),
                 ),
@@ -56,7 +54,7 @@ class TasksScreen extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Theme.of(context).canvasColor,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(32.0),
                   topRight: Radius.circular(32.0),
@@ -90,7 +88,7 @@ class TasksScreen extends StatelessWidget {
             ),
           );
         },
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: Colors.lightBlueAccent[700],
         child: Icon(Icons.add),
       ),
     );
