@@ -6,12 +6,12 @@ class AddTaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String taskName;
-
+    ThemeData themeData = Theme.of(context);
     return Container(
-      color: Color(0xFF757575),
+      color: Color(0xFF01040A),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: themeData.canvasColor,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30.0),
             topRight: Radius.circular(30.0),
@@ -25,7 +25,7 @@ class AddTaskScreen extends StatelessWidget {
               'Add Task',
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.lightBlueAccent,
+                color: themeData.accentColor,
                 fontSize: 30.0,
               ),
             ),
@@ -35,10 +35,9 @@ class AddTaskScreen extends StatelessWidget {
               onChanged: (value) => (taskName = value),
             ),
             FlatButton(
-              color: Colors.lightBlueAccent,
+              color: themeData.accentColor,
               child: Text(
                 'Add',
-                style: TextStyle(color: Colors.white),
               ),
               onPressed: () {
                 if (taskName != null && taskName.isNotEmpty) {
