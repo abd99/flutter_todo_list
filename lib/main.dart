@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
       create: (context) => TaskData(),
       child: MaterialApp(
         theme: ThemeData.dark().copyWith(
-          accentColor: Colors.lightBlueAccent[700],
+          canvasColor: Colors.black87,
+          accentColor: Colors.blue[900],
         ),
         home: TasksScreen(),
       ),

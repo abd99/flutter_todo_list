@@ -7,8 +7,9 @@ import 'package:provider/provider.dart';
 class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ThemeData themeData = Theme.of(context);
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent[700],
+      backgroundColor: themeData.accentColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -23,8 +24,8 @@ class TasksScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 CircleAvatar(
-                  backgroundColor: Theme.of(context).canvasColor,
-                  foregroundColor: Colors.lightBlueAccent[700],
+                  backgroundColor: themeData.canvasColor,
+                  foregroundColor: themeData.accentColor,
                   radius: 30.0,
                   child: Icon(
                     Icons.list,
@@ -54,7 +55,7 @@ class TasksScreen extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
-                color: Theme.of(context).canvasColor,
+                color: Color(0xFF000005),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(32.0),
                   topRight: Radius.circular(32.0),
@@ -74,21 +75,12 @@ class TasksScreen extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.only(
                     bottom: MediaQuery.of(context).viewInsets.bottom),
-                child: AddTaskScreen(
-                    // addTaskCallback: (title) {
-                    // setState(() {
-                    //   Provider.of<TaskData>(context)
-                    //       .tasks
-                    //       .add(Task(name: title));
-                    // });
-                    // Navigator.pop(context);
-                    // },
-                    ),
+                child: AddTaskScreen(),
               ),
             ),
           );
         },
-        backgroundColor: Colors.lightBlueAccent[700],
+        backgroundColor: themeData.accentColor,
         child: Icon(Icons.add),
       ),
     );
